@@ -1,0 +1,5 @@
+<p>Here are the cats</p>
+<div *ngFor="let cat of cats$ | async">
+  This cat is called {{cat.name}} 
+  <span *ngIf="slavesPerCat[cat.id] as slaves">and his masters are {{slaves}}</span>
+</div>
