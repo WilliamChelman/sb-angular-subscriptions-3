@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class CatService {
   getAll(): Observable<Cat[]> {
-    return of(cats);
+    return of(cats).pipe(delay(500));
   }
 
   getSlaves(catId: string): Observable<Person[]> {
-    return of(slaves);
+    return of(slaves).pipe(delay(1000));
   }
 }
 
